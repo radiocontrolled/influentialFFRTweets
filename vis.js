@@ -33,22 +33,31 @@ var doVis = function (data){
 			.attr("stroke", "rgb(44,162,102)")
 			.attr("fill","none")
 			.attr("stroke-width",2)
+			.on("mouseover", function(d){
+				d3.select(".tweet").style("display","none");
+				
+				//http://chimera.labs.oreilly.com/books/1230000000345/ch10.html#_html_div_tooltips
+		    });
 	
 		 var force = d3.layout.force()
      		.nodes(data)
      		.size([w*.8, h*.8])
-        	.linkDistance([1]) 
-        	.charge([-30])       
+        	.linkDistance([100]) 
+        	.charge([-100])       
     		.start();
-    	
+
     	  force.on("tick", function() {
 		  	nodes.attr("cx", function(d) { return d.x; })
 		      .attr("cy", function(d) { return d.y; })
-		      .call(force.drag); //let the nodes be draggable.
-		
-			labels.attr("x", function(d){ return d.x; })
-	    	 .attr("y", function(d){return d.y});
+		      .call(force.drag);
 			});	
+			
+
+		
+		
+		nodes.on("mouseout", function(d){
+			
+		});
 };
 
 
