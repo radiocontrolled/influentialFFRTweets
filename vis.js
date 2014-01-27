@@ -28,16 +28,13 @@ var doVis = function (data){
 			.data(data)
 			.enter()
 			.append("circle").attr("r",function(d){
-				return d.retweet_count * 2;
+				return d.retweet_count * 4;
 			})
 			.attr("stroke", "rgb(44,162,102)")
 			.attr("fill","none")
-			.attr("stroke-width",2)
-			.on("mouseover", function(d){
-				d3.select(".tweet").style("display","none");
-				
-				//http://chimera.labs.oreilly.com/books/1230000000345/ch10.html#_html_div_tooltips
-		    });
+			.attr("stroke-width",4)
+		
+		nodes.append("text").text(function(d){return d.text;})
 	
 		 var force = d3.layout.force()
      		.nodes(data)
@@ -51,13 +48,8 @@ var doVis = function (data){
 		      .attr("cy", function(d) { return d.y; })
 		      .call(force.drag);
 			});	
-			
 
-		
-		
-		nodes.on("mouseout", function(d){
-			
-		});
+	
 };
 
 
