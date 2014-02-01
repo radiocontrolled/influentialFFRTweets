@@ -1,0 +1,35 @@
+body{
+	font-family: Helvetica;
+	color: #777777!important;
+}
+.hidden{
+	display: none;
+}
+.highlight{
+	stroke:  #252953!important;
+}
+svg{	
+    float: right;
+}
+article{
+	padding-left: 1em;
+	padding-top: 1em;
+}
+#tooltip{
+	font-size: 3em;
+	font-weight: 600;
+	line-height: 1.2;
+}
+a{
+	font-size: .5em;	
+	color: #dadada!important;
+	text-decoration: none;
+}
+a:hover, a:focus, a:active{
+	color: #2CA266!important;
+}
+i{
+	color: #dadada!important;
+	font-weight: 600!important;
+	padding-left: .2em;
+}
